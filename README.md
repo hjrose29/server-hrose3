@@ -10,3 +10,10 @@ Skills: GoLang, Docker, AWS(EC2, DynamoDB, IAM, Cloudwatch/trail), Loggly
 <li>Blocked any non GET requests</li>
 <li>Built <ins>Middleware</ins> to monitor requests and send them to <ins>Loggly</ins></li>
 </ol>
+
+
+<b><ins>Building Container</ins>:<b>
+docker build . -t <IMAGE_NAME>
+
+<b><ins>Running Container</ins>:<b>
+docker run -e <LOGGLY_TOKEN> -p <DOCKER_PORT:OPENED_PORT> <IMAGE_NAME>
