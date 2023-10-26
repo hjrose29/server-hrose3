@@ -1,4 +1,5 @@
-## CSC482 - Software Deployment - Server Side
+# CSC482 - Software Deployment - Server Side
+## Go [here](https://github.com/hjrose29/agent-hrose3) for the agent(Web Scraping) side!
 
 Skills: GoLang, Docker, AWS(EC2, DynamoDB, IAM, Cloudwatch/trail), Loggly
 
@@ -11,6 +12,7 @@ Skills: GoLang, Docker, AWS(EC2, DynamoDB, IAM, Cloudwatch/trail), Loggly
 <li>Built <ins>Middleware</ins> to monitor requests and send them to <ins>Loggly</ins></li>
 </ol>
 
+<br>
 
 <b><ins>Building Container</ins>:<b>
 docker build . -t <IMAGE_NAME>
