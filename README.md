@@ -3,7 +3,7 @@
 
 Skills: GoLang, Docker, AWS(EC2, DynamoDB, IAM, Cloudwatch/trail), HTTP Request Handling/Routing
 
-<b><ins>Accomplishments!</ins></b>
+<b><ins>What I did!</ins></b>
 
 <ol>
 <li>Built barebones http server in <ins>GoLang</ins></li>
