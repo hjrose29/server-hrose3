@@ -105,7 +105,9 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
     })
     
     if err != nil {
-        log.Fatalf("Got error calling GetItem: %s", err)
+        
+        fmt.Fprintf(w, "Got error calling GetItem: %s", err)
+        return
     }
     found := 1
     if result.Item == nil {
@@ -116,7 +118,8 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
     item := Datum{}
     err = dynamodbattribute.UnmarshalMap(result.Item, &item)
     if err != nil {
-        log.Fatalf("Failed to unmarshal Record: %v", err)
+        fmt.Fprintf(w, "Failed to unmarshal Record: %v", err)
+        return
     }
     
     if found == 1{
