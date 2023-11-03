@@ -23,5 +23,5 @@ WORKDIR /app
 COPY --from=build /build/main ./
 
 RUN pwd && find .
-
+EXPOSE 8080
 CMD ["./main"]
