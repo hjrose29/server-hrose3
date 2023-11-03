@@ -11,7 +11,7 @@ Skills: GoLang, Docker, AWS(EC2, DynamoDB, IAM, Cloudwatch/trail), HTTP Request 
 <li>Blocked any non GET requests</li>
 <li>Built <ins>middleware</ins> to monitor requests and send them to <ins>Loggly</ins></li>
 <li>Containerized server implementation with <ins>multi-stage Docker build</ins> for space efficiency on EC2 instance</li>
-<li>Built <ins>DynamoDB query</ins> capabilities with GoLang HTTP</li>
+<li>Used <ins>DynamoDB query</ins> capabilities to query the database with HTTP requests</li>
 
 </ol>
 
