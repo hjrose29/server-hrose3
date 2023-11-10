@@ -3,6 +3,15 @@
 
 Skills: GoLang, Docker, AWS(EC2, DynamoDB, IAM, Cloudwatch/trail), HTTP Request Handling/Routing
 
+Server Running [here](http://54.80.1.23:37000/hrose3/status)
+<ul>
+<li>Endpoints:</li>
+<li>'/all' - no parameters, dumps entire table contents</li>
+<li>'/rangedSearch' - required parameter: 'ticker' - specifies stock | optional parameters: 'lower' & 'upper' specifies lower and upper UNIX time bounds!</li>
+<li>'/search' - required parameters: 'ticker', 'datetime' specifies stock and date time(in UNIX time) respectively</li>
+<\ul>
+
+
 <b><ins>What I did!</ins></b>
 
 <ol>
@@ -11,8 +20,8 @@ Skills: GoLang, Docker, AWS(EC2, DynamoDB, IAM, Cloudwatch/trail), HTTP Request 
 <li>Blocked any non GET requests</li>
 <li>Built <ins>middleware</ins> to monitor requests and send them to <ins>Loggly</ins></li>
 <li>Containerized server implementation with <ins>multi-stage Docker build</ins> for space efficiency on EC2 instance</li>
-<li>Used <ins>DynamoDB query</ins> capabilities to query the database with HTTP requests</li>
-
+<li>Used <ins>DynamoDB query</ins> capabilities to query the database with HTTP requests including optional filter parameters</li>
+<li></li>
 </ol>
 
 <br>
