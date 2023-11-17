@@ -42,6 +42,23 @@ func statusHandler(w http.ResponseWriter, r *http.Request) {
 
     w.WriteHeader(http.StatusOK)
     fmt.Fprintf(w, time.Now().String())
+
+    sess := session.Must(session.NewSessionWithOptions(session.Options{
+        SharedConfigState: session.SharedConfigEnable,
+    }))
+    svc := dynamodb.New(sess)
+    input := &dynamodb.DescribeTableInput{
+        TableName: aws.String("hrose3"),
+    }
+    desc, err := svc.DescribeTable(input)
+
+    if err!= nil{
+        log.Fatalf("Could not describe table: %s", err)
+    }
+    table := desc.Table;
+    fmt.Fprintf(w, "\nNumber of items: %d", *table.ItemCount);
+    
+    
 }
 
 func allHandler(w http.ResponseWriter, r *http.Request) {
