@@ -9,7 +9,7 @@ Server Running [here](http://54.80.1.23:37000/hrose3/status)
 <li>'/all' - no parameters, dumps entire table contents</li>
 <li>'/rangedSearch' - required parameter: 'ticker' - specifies stock | optional parameters: 'lower' & 'upper' specifies lower and upper UNIX time bounds!</li>
 <li>'/search' - required parameters: 'ticker', 'datetime' specifies stock and date time(in UNIX time) respectively</li>
-<\ul>
+</ul>
 
 
 <b><ins>What I did!</ins></b>
