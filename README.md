@@ -21,6 +21,7 @@ Server Running [here](http://54.80.1.23:37000/hrose3/status)
 <li>Built <ins>middleware</ins> to monitor requests and send them to <ins>Loggly</ins></li>
 <li>Containerized server implementation with <ins>multi-stage Docker build</ins> for space efficiency on EC2 instance</li>
 <li>Used <ins>DynamoDB query</ins> capabilities to query the database with HTTP requests including optional filter parameters</li>
+<li>Implemented Continuous Development through <ins>CodeBuild/CodePipeline</ins> AWS's automated deployment services.</li>
 <li></li>
 </ol>
 
