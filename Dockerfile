@@ -1,6 +1,6 @@
-#First Stage
+###First Stage###
 
-
+#Finds image from docker hub
 FROM golang:latest AS build
 WORKDIR /build
 COPY . .
@@ -10,7 +10,7 @@ RUN go mod download
 RUN CGO_ENABLED=0 GOOS=linux go build -a -o main .
 
 
-#Second stage
+###Second stage###
 FROM alpine:latest
 
 RUN apk update && \

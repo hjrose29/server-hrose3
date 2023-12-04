@@ -61,6 +61,8 @@ func statusHandler(w http.ResponseWriter, r *http.Request) {
     
 }
 
+
+//Dumps all contents of DynamoDB table in JSON.
 func allHandler(w http.ResponseWriter, r *http.Request) {
     sess := session.Must(session.NewSessionWithOptions(session.Options{
         SharedConfigState: session.SharedConfigEnable,
@@ -96,6 +98,8 @@ func allHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 
+
+//Barebones Search Handler (Accepts ticker and UNIX datetime)
 func searchHandler(w http.ResponseWriter, r *http.Request) {
     sess := session.Must(session.NewSessionWithOptions(session.Options{
         SharedConfigState: session.SharedConfigEnable,
@@ -134,6 +138,8 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
         fmt.Fprintf(w, "Got error calling GetItem: %s", err)
         return
     }
+
+    //If it doesn't find the item, let's user know.
     found := 1
     if result.Item == nil {
         found = 0
@@ -157,6 +163,8 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+
+//Ranged Handler (Accepts ticker and UNIX time lower and upper bounds)
 func rangedSearchHandler(w http.ResponseWriter, r *http.Request) {
     sess := session.Must(session.NewSessionWithOptions(session.Options{
         SharedConfigState: session.SharedConfigEnable,
@@ -168,6 +176,8 @@ func rangedSearchHandler(w http.ResponseWriter, r *http.Request) {
     lower := r.URL.Query().Get("lower")
     upper := r.URL.Query().Get("upper")
     
+
+    //Data validation step to only accept certain tickers.
     if(ticker != "TSLA" && ticker != "AAPL" && ticker != "SPY" && ticker != "AMZN"){
         fmt.Fprintf(w, "ticker not valid, please try again, i.e. \"TSLA\", \"AMZN\", \"AAPL\", \"SPY\"")
         return
@@ -243,11 +253,13 @@ func rangedSearchHandler(w http.ResponseWriter, r *http.Request) {
 
 
 
-
+//Any other http GET request is handled here
 func catchAllHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "404 - Page not found!")
 }
 
+
+//Middleware allowing us to see requests with our logging tool(Solarwind's Loggly).
 func RequestLoggerMiddleware(r *mux.Router) mux.MiddlewareFunc {
     client := loggly.New("Web Scraper")
 

@@ -1,3 +1,4 @@
+#Instruction set for AWS codebuild.
 version: 0.2
 
 phases:
